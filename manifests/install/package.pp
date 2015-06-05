@@ -43,11 +43,11 @@ class vmwaretools::install::package {
       'Debian' : {
         case $::operatingsystem {
           'Ubuntu' : {
-            if ! defined(Package['build-essential']) {
-              package{'build-essential':
-                ensure => present,
-              }
-            }
+#            if ! defined(Package['build-essential']) {
+#              package{'build-essential':
+#                ensure => present,
+#              }
+#            }
             if ! defined(Package["linux-headers-${::kernelrelease}"]) {
               package{"linux-headers-${::kernelrelease}":
                 ensure => present,
